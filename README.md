@@ -1,7 +1,7 @@
 # microservices  
 
 ## System architecture
-![system architecture](https://github.com/lizhouyu/microservices/docs/system architecture.png)  
+![system architecture](https://github.com/lizhouyu/microservices/docs/system_architecture.png)  
 The server side code is in the "server_side" folder.  
 The client side script is in the "client_side" folder.  
 The data processing scipt is in the "data_process" folder.
