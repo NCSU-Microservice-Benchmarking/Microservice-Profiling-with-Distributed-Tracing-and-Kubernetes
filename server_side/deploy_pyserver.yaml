@@ -1,0 +1,169 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyserver
+  labels:
+    name: pyserver
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pyserver
+  template:
+    metadata:
+      labels:
+        app: pyserver
+    spec:
+      containers:
+        - name: pyserver-ingress
+          image: lizhouyu/pyserver-ingress:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5000 --with-threads"]
+          resources:
+          ports:
+            - name: ingress-port
+              containerPort: 5000
+              protocol: TCP
+        - name: pyserver-detector-1
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5001 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-1
+              containerPort: 5001
+              protocol: TCP
+        - name: pyserver-detector-2
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5002 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-2
+              containerPort: 5002
+              protocol: TCP
+        - name: pyserver-detector-3
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5003 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-3
+              containerPort: 5003
+              protocol: TCP
+        - name: pyserver-detector-4
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5004 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-4
+              containerPort: 5004
+              protocol: TCP
+        - name: pyserver-detector-5
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5005 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-5
+              containerPort: 5005
+              protocol: TCP
+        - name: pyserver-detector-6
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5006 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-6
+              containerPort: 5006
+              protocol: TCP
+        - name: pyserver-detector-7
+          image: lizhouyu/pyserver-detector:v1.1
+          imagePullPolicy: Always
+          command: ["/bin/sh","-c","flask run --host=0.0.0.0 --port=5007 --with-threads"]
+          resources:
+            limits:
+              cpu: "6"
+              memory: "16Gi"
+              nvidia.com/gpu: 1 # requesting 1 physical GPUs
+              # nvidia.com/mig-1g.5gb: 1 # requesting 1 virtual GPUs
+          ports:
+            - name: detector-port-7
+              containerPort: 5007
+              protocol: TCP
+      nodeSelector:
+        gpu: tesla-a100
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: pyserver
+spec:
+    selector:
+        app: pyserver
+    ports:
+        - protocol: TCP
+          port: 5000
+          targetPort: 5000
+          name: ingress
+        - protocol: TCP
+          port: 5001
+          targetPort: 5001
+          name: detector-1
+        - protocol: TCP
+          port: 5002
+          targetPort: 5002
+          name: detector-2
+        - protocol: TCP
+          port: 5003
+          targetPort: 5003
+          name: detector-3
+        - protocol: TCP
+          port: 5004
+          targetPort: 5004
+          name: detector-4
+        - protocol: TCP
+          port: 5005
+          targetPort: 5005
+          name: detector-5
+        - protocol: TCP
+          port: 5006
+          targetPort: 5006
+          name: detector-6
+        - protocol: TCP
+          port: 5007
+          targetPort: 5007
+          name: detector-7

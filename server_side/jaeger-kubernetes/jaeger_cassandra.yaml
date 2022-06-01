@@ -1,0 +1,30 @@
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: simple-prod
+spec:
+  strategy: production
+  collector:
+    maxReplicas: 5
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+  storage:
+    type: cassandra
+    options:
+      cassandra:
+        servers: cassandra
+        keyspace: jaeger_v1_dc1
+    cassandraCreateSchema: # <3>
+      datacenter: "dc1"
+      mode: "prod"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: gpu
+            operator: In
+            values:
+            - tesla-a100
