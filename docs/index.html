@@ -23,11 +23,11 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="models.html">Models</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
                             <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li> -->
-                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
                                     <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
@@ -40,7 +40,7 @@
                                     <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
                                     <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                                 <p class="lead fw-normal text-white-50 mb-4"> Modern distributed computing applications have extremely complex structures. Such structural complexity poses significant challenges when these applications are looking to leverage edge computing, which provides low-latency and high-throughput computing proximal to end users. This project addresses the performance issue of large-scale distributed applications by employing an application-network co-design approach.
                                 </p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <!-- <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a> -->
-                                    <!-- <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a> -->
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#data">Data</a>
+                                    <a class="btn btn-outline-light btn-lg px-4" href="#models">Models</a>
                                 </div>
                             </div>
                         </div>
@@ -96,27 +96,45 @@
                     </div>
                 </div>
             </section>
-            <!-- Testimonial section-->
-            <div class="py-5 bg-light">
+            <!-- About section one-->
+            <section class="py-5 bg-light" id="environment">
                 <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                    <div class="fw-bold">
-                                        Tom Ato
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Pomodoro
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/microservices_wireless_setup.drawio.png" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Wireless Environment</h2>
+                            <p class="lead fw-normal text-muted mb-0">A wireless network environment is set up including a Kubernete Server Cluster, a wireless router, and several Raspberry Pis used to simulate clients.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Blog preview section-->
+            </section>
+            <!-- About section two-->
+            <section class="py-5" id="data">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"><iframe title="powerbi_analysis" width="500" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjcwM2FjM2EtMmIzZi00YjdiLWExZmUtMGM5YWFlYmIxMzgxIiwidCI6IjgwZjIzZjRhLTkxYTQtNDU2Ni04ZGIxLTNiY2FiYjIxZDFjYiIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Multi-dimensional Data</h2>
+                            <p class="lead fw-normal text-muted mb-0">We have collected network-tracing data with respect to different setups and present them here interactively.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About section three-->
+            <section class="py-5 bg-light" id="models">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <!-- <div class="col-lg-6"><iframe title="powerbi_analysis" width="600" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiYjcwM2FjM2EtMmIzZi00YjdiLWExZmUtMGM5YWFlYmIxMzgxIiwidCI6IjgwZjIzZjRhLTkxYTQtNDU2Ni04ZGIxLTNiY2FiYjIxZDFjYiIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe></div> -->
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/data_model_random_forest.png" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Data Models</h2>
+                            <p class="lead fw-normal text-muted mb-0">We build state-of-the-art data models to fit the collected network traces.</p>
+                            <a class="btn btn-info btn-sm" href="models.html">More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog preview section
             <section class="py-5">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
@@ -191,9 +209,55 @@
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+            <!-- Team members section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Our team</h2>
+                        <!-- <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p> -->
                     </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-3 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..."/>
+                                <h5 class="fw-bolder">Dr. Ruozhou Yu</h5>
+                                <div class="fst-italic text-muted">Professor &amp; Director</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Zhouyu Li</h5>
+                                <div class="fst-italic text-muted">Ph.D. student</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Zijun Lu</h5>
+                                <div class="fst-italic text-muted">Master's Student</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Xiaochun Liang</h5>
+                                <div class="fst-italic text-muted">Undergraduate Student</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Obblivignes KanchanadeviVenkataraman</h5>
+                                <div class="fst-italic text-muted">Undergraduate Student</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
                     <!-- Call to action-->
-                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                    <!-- <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                         <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                             <div class="mb-4 mb-xl-0">
                                 <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
@@ -207,7 +271,7 @@
                                 <div class="small text-white-50">We care about privacy, and will never share your data.</div>
                             </div>
                         </div>
-                    </aside>
+                    </aside> -->
                 </div>
             </section>
         </main>
