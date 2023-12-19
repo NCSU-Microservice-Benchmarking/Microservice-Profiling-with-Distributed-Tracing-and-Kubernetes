@@ -54,7 +54,9 @@
                             <div class="text-center my-5">
                                 <h1 class="fw-bolder mb-3">Uncertainty-aware Models (PNN)</h1>
                                 <p class="lead fw-normal text-muted mb-4">A <a href="https://colab.research.google.com/drive/1lbhwb6MP8FvQh9Q7Jldt4PuPEeSldsG5#scrollTo=R2NWf9MHFfCW"> Probabilistic Neural Net (PNN) Model </a> trained on collected data to reflect the relationship between model inference performance and allocated resources, client demands, etc, with uncertainty.</p>
-                                <a class="btn btn-primary btn-lg" href="assets/train_num_clients_cpu_limits_pnn.ipynb">Model Training Script</a>
+                                <a class="btn btn-primary btn-lg" href="assets/train_pnn_features.ipynb">Model Training Script</a>
+                                <a class="btn btn-primary btn-lg" href="assets/environment.yaml">Conda Environment</a>
+                                <a class="btn btn-primary btn-lg" href="https://drive.google.com/file/d/11Rd26Ri6pwYC05gT2Ido6Qke1lZXRcRd/view?usp=sharing">Data</a>
                             </div>
                         </div>
                     </div>
@@ -64,10 +66,10 @@
             <section class="py-5 bg-light" id="scroll-target">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/cpu_limit_model_time_vary_num_clients=1.0.png" alt="..." /></div>
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/Confidence Band for num_clients=1.0 gpu_instance=0.0 gpu_memory=0.0.png" alt="..." /></div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">Model inference time for various CPU limits and 1 clients.</h2>
-                            <!-- <p class="lead fw-normal text-muted mb-0">R-squared score: 0.2175698502351323</p> -->
+                            <h2 class="fw-bolder">Model inference time for various CPU limits, 1 clients, without GPU.</h2>
+                            <p class="lead fw-normal text-muted mb-0">Coverage: 0.9925213675213675</p>
                         </div>
                     </div>
                 </div>
@@ -76,10 +78,10 @@
             <section class="py-5">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/cpu_limit_model_time_vary_num_clients=2.0.png" alt="..." /></div>
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/Confidence Band for num_clients=2.0 gpu_instance=0.0 gpu_memory=0.0.png" alt="..." /></div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">Model inference time for various CPU limits and 1 clients.</h2>
-                            <!-- <p class="lead fw-normal text-muted mb-0">R-squared score:  -0.08206760498651833</p> -->
+                            <h2 class="fw-bolder">Model inference time for various CPU limits, 2 clients, without GPU.</h2>
+                            <p class="lead fw-normal text-muted mb-0">Coverage:  0.9887820512820512</p>
                         </div>
                     </div>
                 </div>
@@ -88,10 +90,10 @@
             <section class="py-5 bg-light" id="scroll-target">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/cpu_limit_model_time_vary_num_clients=3.0.png" alt="..." /></div>
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/Confidence Band for num_clients=3.0 gpu_instance=0.0 gpu_memory=0.0.png" alt="..." /></div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">Model inference time for various CPU limits and 3 clients.</h2>
-                            <!-- <p class="lead fw-normal text-muted mb-0">coverage:  -3.8662969251573465</p> -->
+                            <h2 class="fw-bolder">Model inference time for various CPU limits, 3 clients, without GPU.</h2>
+                            <p class="lead fw-normal text-muted mb-0">Coverage: 0.9893874643874644</p>
                         </div>
                     </div>
                 </div>
@@ -100,10 +102,10 @@
             <section class="py-5">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/cpu_limit_model_time_vary_num_clients=4.0.png" alt="..." /></div>
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/Confidence Band for num_clients=4.0 gpu_instance=0.0 gpu_memory=0.0.png" alt="..." /></div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">Model inference time for various CPU limits and 4 clients.</h2>
-                            <!-- <p class="lead fw-normal text-muted mb-0">R-squared score:  -28.528363175760138</p> -->
+                            <h2 class="fw-bolder">Model inference time for various CPU limits, 4 clients, without GPU.</h2>
+                            <p class="lead fw-normal text-muted mb-0">Coverage: 0.9954594017094018</p>
                         </div>
                     </div>
                 </div>
@@ -112,14 +114,27 @@
             <section class="py-5 bg-light" id="scroll-target">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/cpu_limit_model_time_vary_num_clients=5.0.png" alt="..." /></div>
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/Confidence Band for num_clients=5.0 gpu_instance=0.0 gpu_memory=0.0.png" alt="..." /></div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">Model inference time for various CPU limits and 5 clients.</h2>
-                            <!-- <p class="lead fw-normal text-muted mb-0">R-squared score:  -21.24660460319351</p> -->
+                            <h2 class="fw-bolder">Model inference time for various CPU limits, 5 clients, without GPU.</h2>
+                            <p class="lead fw-normal text-muted mb-0">Coverage: 0.9914529914529916</p>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- About section six-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/Confidence Band for num_clients=5.0 gpu_instance=3.0 gpu_memory=20.0.png" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Model inference time for various CPU limits, 4 clients, 3 GPU compuing instances and 20GB graphic memory.</h2>
+                            <p class="lead fw-normal text-muted mb-0">Coverage: 1.0</p>
+                            <p class="lead fw-normal text-muted mb-0">Note: we are collecting more data points for various GPU configurations to refine this model.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>  
         </main>
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
